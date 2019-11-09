@@ -11,6 +11,9 @@ public class WevSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/add-pigeon").authenticated();
+        http.authorizeRequests().antMatchers("/add-pigeon").authenticated()
+                .and()
+                .csrf()
+                .disable();
     }
 }
